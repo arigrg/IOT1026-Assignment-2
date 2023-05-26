@@ -33,5 +33,21 @@ namespace AssignmentTest
             chest.Open();
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
         }
+
+        private class TestClassAttribute : Attribute
+        {
+        }
+
+        private class TestMethodAttribute : Attribute
+        {
+        }
+
+        private class Assert
+        {
+            internal static void AreEqual(TreasureChest.State state, TreasureChest.State locked)
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
