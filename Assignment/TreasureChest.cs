@@ -43,7 +43,8 @@
         {
             // Method to manipulate the state of the treasure chest based on the specified action.
 
-            if (action == Action.Open) {
+            if (action == Action.Open)
+            {
                 Open();
             }
             return _state;
@@ -60,7 +61,7 @@
             }
             else
             {
-                
+
                 Console.WriteLine("Invalid action: The chest is not locked.");
             }
         }
@@ -133,7 +134,7 @@
         // Eun representing the possible states of the treasure chest.
         public enum State { Open, Closed, Locked };
 
-         // Eun representing the possible actions that can be performed on the treasure chest.
+        // Eun representing the possible actions that can be performed on the treasure chest.
         public enum Action { Open, Close, Lock, Unlock };
 
         // Eun representing the possible materials of the treasure chest.
