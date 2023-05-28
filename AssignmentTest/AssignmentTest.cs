@@ -19,7 +19,7 @@ namespace AssignmentTest
         [TestMethod]
         public void OpenClosedTest()
         {
-    
+
             // Create a new chest that is in the closed state
             TreasureChest chest = new TreasureChest(TreasureChest.State.Closed);
             chest.Open();
