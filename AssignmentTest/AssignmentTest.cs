@@ -42,7 +42,7 @@ namespace AssignmentTest
         {
         }
 
-         public void LockUnlockTest()
+        public void LockUnlockTest()
         {
             // Create a new chest and lock it
             TreasureChest chest = new TreasureChest();
@@ -102,4 +102,3 @@ namespace AssignmentTest
     }
 }
 
-       
