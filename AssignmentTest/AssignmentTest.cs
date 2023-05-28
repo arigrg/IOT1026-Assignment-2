@@ -8,6 +8,7 @@ namespace AssignmentTest
         [TestMethod]
         public void OpenLockedTest()
         {
+            //test
             // Chest starts in the locked state
             TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);
             // Try to open the chest
