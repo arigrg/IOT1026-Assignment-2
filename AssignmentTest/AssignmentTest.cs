@@ -8,7 +8,6 @@ namespace AssignmentTest
         [TestMethod]
         public void OpenLockedTest()
         {
-            //test
             // Chest starts in the locked state
             TreasureChest chest = new TreasureChest(TreasureChest.State.Locked);
             // Try to open the chest
@@ -99,6 +98,19 @@ namespace AssignmentTest
             // Verify that the chest is initialized with the specified values
             Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
             Assert.AreEqual(chest.ToString(), "A Locked chest with the following properties:\nMaterial: Oak\nLock Type: Novice\nLoot Quality: Grey");
+        }
+
+        private class Assert
+        {
+            internal static void AreEqual(TreasureChest.State state, TreasureChest.State locked)
+            {
+                throw new NotImplementedException();
+            }
+
+            internal static void AreEqual(string v1, string v2)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
