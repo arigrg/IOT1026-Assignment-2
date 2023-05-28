@@ -42,12 +42,64 @@ namespace AssignmentTest
         {
         }
 
-        private class Assert
+         public void LockUnlockTest()
         {
-            internal static void AreEqual(TreasureChest.State state, TreasureChest.State locked)
-            {
-                throw new NotImplementedException();
-            }
+            // Create a new chest and lock it
+            TreasureChest chest = new TreasureChest();
+            chest.Lock();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
+
+            // Unlock the chest
+            chest.Unlock();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Closed);
+        }
+
+        [TestMethod]
+        public void CloseOpenTest()
+        {
+            // Create a new chest and open it
+            TreasureChest chest = new TreasureChest();
+            chest.Open();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
+
+            // Close the chest
+            chest.Close();
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Closed);
+        }
+
+        [TestMethod]
+        public void ManipulateTest()
+        {
+            // Create a new chest and perform a series of actions
+            TreasureChest chest = new TreasureChest();
+            chest.Manipulate(TreasureChest.Action.Open);
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Open);
+
+            chest.Manipulate(TreasureChest.Action.Close);
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Closed);
+
+            chest.Manipulate(TreasureChest.Action.Lock);
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
+
+            chest.Manipulate(TreasureChest.Action.Unlock);
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Closed);
+        }
+
+        [TestMethod]
+        public void InitializeWithCustomParametersTest()
+        {
+            // Create a new chest with custom material, lock type, and loot quality
+            TreasureChest chest = new TreasureChest(
+                TreasureChest.Material.Oak,
+                TreasureChest.LockType.Novice,
+                TreasureChest.LootQuality.Grey
+            );
+
+            // Verify that the chest is initialized with the specified values
+            Assert.AreEqual(chest.GetState(), TreasureChest.State.Locked);
+            Assert.AreEqual(chest.ToString(), "A Locked chest with the following properties:\nMaterial: Oak\nLock Type: Novice\nLoot Quality: Grey");
         }
     }
 }
+
+       
