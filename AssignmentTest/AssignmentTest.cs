@@ -6,6 +6,7 @@ namespace AssignmentTest
     public class AssignmentTests
     {
         [TestMethod]
+    
         public void OpenLockedTest()
         {
             // Chest starts in the locked state
